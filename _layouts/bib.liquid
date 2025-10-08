@@ -30,7 +30,7 @@
           <img class="preview z-depth-1 rounded" src="{{ entry.preview }}">
         {% else %}
           {% assign entry_path = entry.preview | prepend: '/assets/img/publication_preview/' %}
-          {% assign zoom_url = nil %}
+          {% assign zoom_url = null %}
           {% if entry.preview_full %}
             {% if entry.preview_full contains '://' %}
               {% assign zoom_url = entry.preview_full %}

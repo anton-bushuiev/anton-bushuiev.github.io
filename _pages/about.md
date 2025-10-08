@@ -4,7 +4,6 @@ title: about
 permalink: /
 subtitle: <a href="mailto:anton.bushuiev@cvut.cz" title="Email"><i class="fas fa-envelope"></i> anton.bushuiev@cvut.cz</a> | <a href="https://linkedin.com/in/anton-bushuiev" title="LinkedIn"><i class="fab fa-linkedin-in"></i> LinkedIn</a> | <a href="https://bsky.app/profile/anton-bushuiev.bsky.social" title="Bluesky"><i class="fab fa-bluesky"></i> Bluesky</a> | <a href="https://x.com/AntonBushuiev" title="X"><i class="fab fa-x-twitter"></i> X</a> | <a href="https://github.com/anton-bushuiev" title="GitHub"><i class="fab fa-github"></i> GitHub</a> | <a href="https://scholar.google.com/citations?user=1KKXOA0AAAAJ" title="Google Scholar"><i class="fas fa-graduation-cap"></i> Google Scholar</a> | <a href="https://huggingface.co/anton-bushuiev" title="Hugging Face"> Hugging Face</a>
 
-
 _styles: |
   /* Page-specific tweaks: make profile photo smaller */
   @media (min-width: 400px) {
