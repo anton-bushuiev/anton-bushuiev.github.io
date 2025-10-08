@@ -30,14 +30,22 @@
           <img class="preview z-depth-1 rounded" src="{{ entry.preview }}">
         {% else %}
           {% assign entry_path = entry.preview | prepend: '/assets/img/publication_preview/' %}
+          {% assign zoom_url = nil %}
+          {% if entry.preview_full %}
+            {% if entry.preview_full contains '://' %}
+              {% assign zoom_url = entry.preview_full %}
+            {% else %}
+              {% assign zoom_url = entry.preview_full | relative_url %}
+            {% endif %}
+          {% endif %}
           {%
             include figure.liquid
             loading="eager"
             path=entry_path
-            sizes = "200px"
+            zoom_src=zoom_url
+            sizes = "95vw"
             class="preview z-depth-1 rounded"
             zoomable=true
-            avoid_scaling=true
             alt=entry.preview
           %}
         {% endif %}
@@ -46,7 +54,7 @@
   {% endif %}
 
   <!-- Entry bib key -->
-  <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
+  <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-10{% else %}col-sm-10{% endif %}">
     <!-- Title -->
     <div class="title">{{ entry.title }}</div>
     <!-- Author -->
@@ -185,6 +193,11 @@
       {{ entry.note | strip }}
     </div>
 
+    <!-- Description -->
+    {% if entry.description %}
+      <div class="description">{{ entry.description }}</div>
+    {% endif %}
+
     <!-- Links/Buttons -->
     <div class="links">
       {% if entry.award %}
@@ -236,12 +249,21 @@
       {% if entry.code %}
         <a href="{{ entry.code }}" class="btn btn-sm z-depth-0" role="button">Code</a>
       {% endif %}
+      {% if entry.dataset %}
+        <a href="{{ entry.dataset }}" class="btn btn-sm z-depth-0" role="button">Dataset</a>
+      {% endif %}
+      {% if entry.tutorials %}
+        <a href="{{ entry.tutorials }}" class="btn btn-sm z-depth-0" role="button">Tutorials</a>
+      {% endif %}
       {% if entry.poster %}
         {% if entry.poster contains '://' %}
           <a href="{{ entry.poster }}" class="btn btn-sm z-depth-0" role="button">Poster</a>
         {% else %}
           <a href="{{ entry.poster | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">Poster</a>
         {% endif %}
+      {% endif %}
+      {% if entry.news %}
+        <a href="{{ entry.news }}" class="btn btn-sm z-depth-0" role="button" target="_blank">NEWS</a>
       {% endif %}
       {% if entry.slides %}
         {% if entry.slides contains '://' %}

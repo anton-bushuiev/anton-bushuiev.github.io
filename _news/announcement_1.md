@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2015-10-22 15:59:00-0400
+date: 2025-07-01 15:59:00-0400
 inline: true
 related_posts: false
 ---
 
-A simple inline announcement.
+I will be doing a research internship in the [Martin Steinegger lab](https://steineggerlab.com/en/) at Seoul National University from July to September.

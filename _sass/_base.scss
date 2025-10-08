@@ -577,6 +577,10 @@ footer.sticky-bottom {
   }
 }
 
+.post h2 {
+  font-size: 1.5rem;
+}
+
 .post-title {
   mjx-container[jax="CHTML"][display="true"] {
     display: unset;
@@ -644,12 +648,6 @@ footer.sticky-bottom {
   }
 }
 
-// diff2html - Fix for diff2html line number overflow
-
-.d2h-diff-table {
-  position: relative;
-}
-
 // Distill
 
 .distill {
@@ -674,7 +672,20 @@ footer.sticky-bottom {
 
   .card {
     img {
-      width: 100%;
+      width: auto;
+      max-height: 25px;
+      object-fit: contain;
+    }
+
+    // Ensure project thumbnails shrink correctly
+    .card-img-top,
+    .card-img {
+      width: auto !important; // override Bootstrap and width attribute
+      max-height: 25px;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto; // center within card
     }
   }
 
@@ -735,8 +746,6 @@ footer.sticky-bottom {
     li {
       margin-bottom: 1rem;
 
-      .preview {
-      }
 
       .abbr {
         margin-bottom: 0.5rem;
@@ -764,6 +773,14 @@ footer.sticky-bottom {
 
       .title {
         font-weight: bolder;
+      }
+
+      .description {
+        color: var(--global-text-color-light);
+        font-size: 0.9rem;
+        font-style: italic;
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
       }
 
       .author {
@@ -1422,4 +1439,48 @@ figure.cover {
   a.cover-link:hover {
     color: #23212d !important;
   }
+}
+
+/* Remove black borders/shadows around images coming from MDB's z-depth classes */
+img.z-depth-1,
+.z-depth-1 img,
+.z-depth-1 {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  border: none !important;
+}
+
+/* Publication previews: no borders/shadows */
+.publications img.preview {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  border: none !important;
+  max-width: 120px;
+}
+
+// About page boxed container
+.about-box {
+  background: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.about-box .profile {
+  margin-bottom: 1rem;
+}
+
+.about-box .more-info {
+  margin-top: 0.5rem;
+}
+
+// Reusable section box (same look as about-box)
+.section-box {
+  background: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  margin-top: 1.25rem;
 }
