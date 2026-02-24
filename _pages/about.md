@@ -31,7 +31,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a third-year PhD student at the Czech Technical University in Prague, supervised by [Josef Sivic](https://scholar.google.com/citations?user=NCtKHnQAAAAJ&hl=en&oi=ao). My primary research interest is developing AI to discover new molecules, such as drugs or enzymes.
+I am a third-year PhD student at the Czech Technical University in Prague and IOCB Prague, supervised by [Josef Sivic](https://scholar.google.com/citations?user=NCtKHnQAAAAJ&hl=en&oi=ao) and [Tomáš Pluskal](https://pluskal.group.uochb.cz/en). My primary research interest is developing AI to discover new molecules, such as drugs or enzymes.
 
 I have been working on machine learning methods for designing and optimizing protein interactions, as well as for discovering small molecules from nature via mass spectrometry. Currently, I focus on machine learning for enzymes, combining these two research directions. We closely collaborate with my brother, [Roman Bushuiev](https://roman-bushuiev.github.io).
 
